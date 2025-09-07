@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# Virtual Environment
+venv/
+
+# ONNX Models
+*.onnx
+*.onnx.json
+
+# Data files
+data/
+
+# Log files
+*.log
+
+# Gemini-generated files
+PROJECT_OVERVIEW.md
+COMPREHENSIVE_ANALYSIS.md
+INDEX.md
+GEMINI.md
