@@ -100,20 +100,8 @@ source venv/bin/activate
 print_status "Upgrading pip..."
 pip install --upgrade pip setuptools wheel
 
-# Install PyTorch with CUDA support
-print_status "Installing PyTorch with CUDA support..."
-if command -v nvidia-smi &> /dev/null; then
-    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
-else
-    pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cpu
-fi
-
-# Install TensorFlow with GPU support
-print_status "Installing TensorFlow..."
-pip install tensorflow[and-cuda]==2.15.0
-
-# Install other requirements
-print_status "Installing Python dependencies..."
+# Install all requirements from the file
+print_status "Installing Python dependencies from requirements.txt..."
 pip install -r requirements.txt
 
 # Test GPU availability
