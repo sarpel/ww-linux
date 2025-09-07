@@ -41,9 +41,10 @@ sudo apt update
 # Install system dependencies
 print_status "Installing system dependencies..."
 sudo apt install -y \
-    python3-dev \
-    python3-pip \
-    python3-venv \
+    python3.10-dev \
+    python3.10-pip \
+    python3.10-venv \
+
     build-essential \
     cmake \
     pkg-config \
@@ -87,7 +88,7 @@ fi
 # Create virtual environment
 print_status "Creating Python virtual environment..."
 if [ ! -d "venv" ]; then
-    python3 -m venv venv
+    python3.10 -m venv venv
     print_success "Virtual environment created"
 else
     print_status "Virtual environment already exists"
@@ -106,7 +107,7 @@ pip install -r requirements.txt
 
 # Test GPU availability
 print_status "Testing GPU availability..."
-python3 -c "
+python3.10 -c "
 import torch
 import tensorflow as tf
 
